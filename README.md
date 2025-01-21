@@ -18,7 +18,7 @@ This project is a web application that allows users to interact with a form and 
    ```bash
    git clone https://github.com/kirs10a/Website-Creation.git
 
-   You are free to:
+You are free to:
 - Share — copy and redistribute the material in any medium, mode, or format
 - Adapt — remix, transform, and build upon the material for any purpose
 Under the following conditions:
