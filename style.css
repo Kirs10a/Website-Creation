@@ -1,0 +1,221 @@
+/* General body and container styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(145deg, #181818, #535353);
+    color: #dcdcdc; /* Soft white text */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(25, 25, 25, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 85, 0, 0.935);
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background: linear-gradient(145deg, #d3d2d2, #e4e3e2);
+    color: #333;
+}
+
+body.light-mode .container {
+    background-color: #d7d1d1;
+    backdrop-filter: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading styles */
+h1, h2 {
+    font-size: 28px;
+    color: #dcdcdc;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+body.light-mode h1, body.light-mode h2 {
+    color: #333;
+}
+
+/* Label and input styling */
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #bbbbbb; /* Softer gray for labels */
+    transition: color 0.3s ease;
+}
+
+body.light-mode label {
+    color: #444;
+}
+
+textarea, input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 85, 0, 0.435); /* Subtle border */
+    border-radius: 8px; /* Rounded inputs */
+    font-size: 16px;
+    background-color: #171717;
+    color: #dcdcdc;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle inner shadow */
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+body.light-mode textarea,
+body.light-mode input[type="text"],
+body.light-mode input[type="email"],
+body.light-mode input[type="tel"],
+body.light-mode input[type="date"],
+body.light-mode select {
+    background-color: #f1f0f0;
+    color: #333;
+    border-color: #bbb;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: rgba(255, 85, 0, 0.935);
+    box-shadow: 0 0 5px rgba(255, 85, 0, 0.935);
+    outline: none;
+}
+
+body.light-mode input:focus, body.light-mode textarea:focus, body.light-mode select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Invalid phone input styling */
+input.invalid {
+    border-color: red;
+    box-shadow: 0 0 5px red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+body.light-mode input.invalid {
+    border-color: #ff5e5e;
+    box-shadow: 0 0 5px #ff5e5e;
+    background-color: rgba(255, 92, 92, 0.1);
+}
+#rc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Adjust margin as needed */
+    max-width: 80%; /* Ensure it spans the container width for centering */
+  }
+
+#logoCanvasSection {
+    display: none; /* Initially hidden */
+    text-align: center; /* Center the canvas section */
+    margin-top: 20px;
+  }
+  
+  #logoCanvas {
+    background-color: white; /* White background for the canvas */
+    border: 1px solid #000; /* Optional: border for the canvas */
+    margin: 0 auto; /* Center canvas horizontally */
+    display: block; /* Block-level element to center it */
+  }
+
+
+/* Button styling */
+.form-group >button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(255, 85, 0, 0.935), #e2a790); /* Muted orange gradient */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded buttons */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #d64d17, #ed7a1c); /* Gradient reverse on hover */
+    transform: scale(1.03); /* Subtle pop */
+}
+
+body.light-mode button {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), #66b3ff); /* Light mode button gradient */
+}
+
+body.light-mode button:hover {
+    background: linear-gradient(135deg, #0056b3, #99c2ff);
+}
+
+/* Additional paragraph styling */
+p {
+    font-size: 14px;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #aaaaaa;
+    transition: color 0.3s ease;
+}
+
+body.light-mode p {
+    color: #666;
+}
+
+/* Toggle button styling */
+.toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 5px;
+    background-color: #333;
+    color: #e6e4e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+#tryColorsButton , #resetButton{
+    max-width: 20%;
+}
+
+.toggle-button:hover {
+    background-color: #444;
+}
+
+body.light-mode .toggle-button {
+    background-color: #007bff;
+}
+
+body.light-mode .toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    display: none; /* Hide by default */
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button[type="submit"].success {
+    background: linear-gradient(45deg, #256127, #81c784);
+    color: white;
+    border: none;
+}

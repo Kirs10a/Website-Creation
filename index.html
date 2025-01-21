@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Logo -->
+  <link rel="icon" href="TransparentLogo.png" sizes="192x192" type="image/png">
+  
+  <title>Kirs10 Codes Website Creation</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+  />
+  <!-- Add Google reCAPTCHA Script -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+  <button class="toggle-button" id="toggleBtn">Switch to Light Mode</button>
+
+  <div class="container">
+    <h1>Website Creation Form</h1>
+    <p>Please fill out this form to help us create your ideal website.</p>
+    <form id="questionnaireForm" name="questionnaireForm">
+      <!-- General Information -->
+      <h2>1. General Information</h2>
+      <div class="form-group">
+        <label for="clientName">Your Name:</label>
+        <input type="text" id="clientName" name="client_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="companyName">Business/Company Name:</label>
+        <input type="text" id="companyName" name="company_name">
+      </div>
+
+      <div class="form-group">
+        <label for="websiteName">Website Name (if different from company name):</label>
+        <input type="text" id="websiteName" name="website_name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Contact Email:</label>
+        <input type="email" id="email" name="client_email" required><br>
+        <span id="emailError" style="color: red; font-size: 12px;"></span>
+      <br>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Contact Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="client_phone"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <br>
+        <label for="deadline">Deadline for the Website Launch:</label>
+        <input type="date" id="deadline" name="deadline">
+      </div>
+
+      <!-- Purpose of the Website -->
+      <h2>2. Purpose of the Website</h2>
+      <div class="form-group">
+        <label for="targetAudience">Who is your target audience? (e.g., age group, interests, location):</label>
+        <textarea id="targetAudience" name="target_audience" rows="4" placeholder="Enter details here..."></textarea>
+      </div>
+      <!-- Business Description -->
+      <div class="form-group">
+        <label for="businessDescription">Describe your business or the message you want your website to convey:</label>
+        <textarea id="businessDescription" name="business_description" rows="4" placeholder="Enter details here..."></textarea>
+      </div>
+
+      <!-- Design Preferences -->
+      <h2>3. Design Preferences</h2>
+      <div class="form-group">
+        <label for="logo">Do you have a logo?</label>
+        <select id="logo" name="logo" onchange="toggleLogoOptions()">
+          <option value="none">No, I need one created</option>
+          <option value="upload">Yes, I will provide it</option>
+          <option value="draw">Yes, I want to draw it</option>
+        </select>
+      </div>
+      
+      <!-- Logo upload section (hidden by default) -->
+      <div id="logoUploadSection" style="display: none;">
+        <label for="logoUpload">Upload your logo:</label>
+        <input type="file" id="logoUpload" name="logo_upload">
+      </div>
+      
+      <!-- Logo drawing section (hidden by default) -->
+      <div id="logoCanvasSection" style="display: none;">
+        <label for="logoCanvas">Draw your logo:</label>
+        <canvas id="logoCanvas" width="400" height="400" style="border: 1px solid black;"></canvas>
+        <button type="button" onclick="clearCanvas()">Clear Canvas</button>
+      </div>
+
+      <!-- Color Pickers -->
+      <h2>4. Choose Your Color Theme</h2>
+      <div class="form-group">
+        <label for="backgroundColor">Background Color:</label>
+        <input type="color" id="backgroundColor" name="background_color" value="#393939">
+      </div>
+      <div class="form-group">
+        <label for="textColor">Text Color:</label>
+        <input type="color" id="textColor" name="text_color" value="#dcdcdc">
+      </div>
+      <div class="form-group">
+        <label for="buttonColor">Shadow Color:</label>
+        <input type="color" id="buttonColor" name="button_color" value="#ff5500">
+      </div>
+
+      <div class="form-group">
+        <br>
+        <button type="button" id="tryColorsButton">Try Colors</button>
+      </div>
+
+      <!-- Reset Button -->
+      <div class="form-group">
+        <br>
+        <button type="button" id="resetButton">Reset Colors</button>
+      </div>
+
+      <!-- Budget and Payment -->
+      <h2>5. Budget and Payment</h2>
+      <div class="form-group">
+        <label for="budget">What is your estimated budget for this project?</label>
+        <select id="budget" name="budget">
+          <option value="open">Open to discuss</option>
+          <option value="1500-2500">R1,500 - R2,500</option>
+          <option value="2500-3500">R2,500 - R3,500</option>
+          <option value="3500plus">R3,500+</option>
+        </select>
+      </div>
+      <p>A 30% deposit is required, with the remaining balance due upon completion.</p>
+
+      <div class="form-group">
+        <!-- reCAPTCHA widget -->
+        <br>
+        <div id="rc" class="g-recaptcha" data-sitekey="6Ldnk74qAAAAAEDds1z6lJ5KlgpY6RZWhdHf1NTk"></div>
+        <br>
+        <button type="submit">Submit</button>
+      </div>
+      <img src="TransparentLogo.png" alt="Kirs10Codes logo" width="150px" height="150px">
+    </form>
+  </div>
+
+  <!-- Add JavaScript files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
