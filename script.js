@@ -89,8 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
         sendFormData(); // Assume this function is defined elsewhere for form submission
     });
 
-    function sendFormData() {
-        const formData = new FormData(form);
+function sendFormData() {
+    const form = document.getElementById('questionnaireForm'); // Get the form DOM element
     
         // Send email to the owner
         emailjs.sendForm('service_wws412t', 'template_38gdl8b', '#questionnaireForm', 'y7iBeg1e0KKK0zwYJ')
